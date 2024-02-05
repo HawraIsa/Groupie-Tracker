@@ -13,7 +13,8 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>  
-   <style>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
         body {
       color: #FFF;
       background: url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Starry-night-sky-cloud-digital-art-1920x1080-wallpapers.jpg) center fixed;
@@ -53,8 +54,11 @@
       align-items: center;
       height: 65px;
       padding: 0 124px;
+      font-family: Monospace;
+      font-size: 27px;
     }
   
+
     /* Rest of the style code... */
   
     .container {
@@ -102,10 +106,14 @@
       margin-bottom: 20px;
       color: #FFF;
     }
-  
-
-
-
+    
+      /* Media query for smaller screens */
+  @media screen and (max-width: 600px) {
+      .navbar {
+        justify-content: center;
+        padding: 10px;
+      }
+    }
     .btn-secondary {
     display: block;
     width: 90%;
@@ -117,6 +125,7 @@
     background-color: #FAEF5D;
     color: #FF004D;
     text-decoration: none;
+    font-family: monospace;
     transition: background-color 0.3s ease;
   }
 
@@ -133,6 +142,7 @@
     background-color: #7E2553;
     color: #FAEF5D;
     border: none;
+    font-family: monospace;
     transition: background-color 0.3s ease;
   }
 
@@ -145,9 +155,14 @@
 <body>
 <!---------------------------------------------------------------- Navigation bar ------------------------------------------------------------------>
 
+
 <nav class="navbar navbar-expand-lg navbar-dark">
-     <a class="navbar-brand home-link">Home Page</a>
+  <div class="d-flex justify-content-center">
+    <i class="fa-solid fa-house" style="font-size: 27px; color: whitesmoke; "></i>
+  </div>&nbsp;
+  <a class="navbar-brand home-link" style="font-size: 24px;">Home Page</a>
 </nav>
+
 
 <!---------------------------------------------------------------- Cards ------------------------------------------------------------------>
 
