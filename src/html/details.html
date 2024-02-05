@@ -37,7 +37,34 @@
   <style>
     body {
       color: #FFF;
-      background-color: #1D2B53;
+      background: url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Starry-night-sky-cloud-digital-art-1920x1080-wallpapers.jpg) center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      background-blend-mode: overlay;
+      position: relative;
+    }
+
+    .white-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+  
+    @keyframes flowColors {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
   .navbar {
@@ -158,7 +185,7 @@
      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
            <li class="nav-item">
-              <a class="nav-link" href="/home">Back to All Bands</a>
+              <a class="nav-link" href="/home" >Back to All Bands</a>
            </li>
         </ul>
      </div>
