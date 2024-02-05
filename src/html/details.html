@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!------------------------------------------------------------------ Title --------------------------------------------------------------------------->
+
+  <title>Artist Details</title>
+  
+   <!------------------------------------------------------------------ CSS & JS --------------------------------------------------------------------------->
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>  
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var navbarToggler = document.querySelector(".navbar-toggler");
+      var navbarCollapse = document.querySelector(".navbar-collapse");
+
+      navbarToggler.addEventListener("click", function() {
+        if (navbarCollapse.style.display === "block") {
+          navbarCollapse.style.display = "none";
+        } else {
+          navbarCollapse.style.display = "block";
+        }
+      });
+
+      var navbarLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+      navbarLinks.forEach(function(navbarLink) {
+        navbarLink.addEventListener("click", function() {
+          navbarCollapse.style.display = "none";
+        });
+      });
+    });
+  </script>
+  <style>
+    body {
+      color: #FFF;
+      background-color: #1D2B53;
+    }
+
+  .navbar {
+      background-color: #7E2553;
+      display: flex;
+      align-items:center;
+    }
+
+    .navbar-brand {
+      font-family: Monospace;
+      font-size: 25px;
+      color: whitesmoke;
+    }
+
+    .navbar-brand:hover {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+  }
+
+    .row {
+      margin: 20px;
+    }
+    .frame {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: box-shadow 0.3s ease;
+    }
+    .frame:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      justify-content: center;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #F5E663;
+    }
+
+    .btn-stunning {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 20px;
+      border-radius: 30px;
+      background-color: #F6B17A;
+      color: #3C1642;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-stunning:hover {
+      background-color: #FF7F50;
+      color: #FFF;
+    }
+    .card {
+    background-color: #7E2553;
+    color: white;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 20px;
+  }
+  .card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #FF004D;
+  }
+  .card-text {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    list-style-type: none;
+    color: white;
+  }
+  .card-text li::before {
+    content: "▹";
+    color: white;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  .table {
+    background-color: #7E2553;
+    color: #FAEF5D;
+    border: none;
+    margin-top: 20px;
+  }
+  .table th {
+    color: #FAEF5D;
+    font-weight: bold;
+    border-bottom: 2px solid #2D3250;
+    background-color: #424769;
+  }
+  .table td {
+    color: #FAEF5D;
+    background-color: #7E2553;
+  }
+  </style>
+</head>
+<body>
+<!---------------------------------------------------------------- Navigation bar ------------------------------------------------------------------>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+     <a class="navbar-brand" >Artist Details</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+           <li class="nav-item">
+              <a class="nav-link" href="/home">Back to All Bands</a>
+           </li>
+        </ul>
+     </div>
+  </div>
+</nav>
+  <!---------------------------------------------------------------- Artist Details ------------------------------------------------------------------>
+
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{.Artist.Image}}" alt="{{.Artist.Name}}" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2 class="card-title" style="font-family: Georgia, serif;">Name: <span style="color: white; font-weight: lighter; font-size: 20px;">{{.Artist.Name}}</span></h2>
+            <h2 class="card-title" style="font-family: Georgia, serif;">Members:</h2>
+            <ul class="card-text" style="font-family: Georgia, serif;  font-weight: lighter; font-size: 20px;">
+              {{range .Artist.Members}} {{.}},{{end}}
+            </ul>
+            <h2 class="card-title" style="font-family: Georgia, serif;">Date Created: <span style="color: white; font-size: 20px;  font-weight: lighter;">{{.Artist.Year}}</span></h2>
+            <h2 class="card-title" style="font-family: Georgia, serif;">First Album Released: <span style="color: white;  font-weight: lighter; font-size: 20px;">{{.Artist.Album}}</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!---------------------------------------------------------------- Upcoming Concerts ------------------------------------------------------------------>
+
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title" style="font-family: Georgia, serif;">Upcoming Concerts:</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="font-family: Georgia, serif;  font-weight: lighter; font-size: 22px;">Location</th>
+              <th style="font-family: Georgia, serif;  font-weight: lighter; font-size: 22px;">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{range $location, $dates := .Relation.DatesLocations}}
+            <tr>
+              <td><strong style="color: white; font-family: Georgia, serif;  font-weight: lighter; font-size: 20px;">{{$location}}</strong></td>
+              <td>
+                <ul>
+                  {{range $index, $date := $dates}}
+                  <li><span style="color: white; font-family: Georgia, serif;  font-weight: lighter; font-size: 20px;">{{$date}}</span></li>
+                  {{end}}
+                </ul>
+              </td>
+            </tr>
+            {{end}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<!---------------------------------------------------------------- footer ------------------------------------------------------------------>
+
+<footer>
+  <div class="text-center p-3">
+     2024 Copyright:
+    <a class="text-reset fw-normal" href="https://reboot01.com/" style="color: whitesmoke;">© Reboot01 Students</a>
+  </div>
+</footer>
+
+</html>

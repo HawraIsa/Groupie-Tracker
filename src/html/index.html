@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!------------------------------------------------------------------ Title --------------------------------------------------------------------------->
+
+  <title>Artists</title>
+
+   <!------------------------------------------------------------------ CSS & JS --------------------------------------------------------------------------->
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>  
+   <style>
+        body {
+      color: #FFF;
+      background: url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Starry-night-sky-cloud-digital-art-1920x1080-wallpapers.jpg) center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      background-blend-mode: overlay;
+      position: relative;
+    }
+
+    .white-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+  
+    @keyframes flowColors {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  
+    .navbar {
+      background-color: #7E2553;
+      display: flex;
+      align-items: center;
+      height: 65px;
+      padding: 0 124px;
+    }
+  
+    /* Rest of the style code... */
+  
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 13px;
+    }
+  
+    .card {
+      max-width: 250px;
+      margin: 20px;
+      background: linear-gradient(135deg, #FAEF5D, #FF004D, #7E2553, #1D2B53);
+      background-size: 800% 800%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-position 3s linear infinite;
+    }
+  
+    .card:hover {
+      transform: translateY(-5px);
+    }
+  
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+      object-fit: cover;
+    }
+  
+    .card-body {
+      padding: 20px;
+    }
+  
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #FFF;
+    }
+  
+    .card-text {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #FFF;
+    }
+  
+
+
+
+    .btn-secondary {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #FAEF5D;
+    color: #FF004D;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #FF004D;
+    color: #FAEF5D;
+  }
+
+  .btn-stunning {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 30px;
+    background-color: #7E2553;
+    color: #FAEF5D;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-stunning:hover {
+    background-color: #FAEF5D;
+    color: #7E2553;
+  }
+  </style>
+</head>
+<body>
+<!---------------------------------------------------------------- Navigation bar ------------------------------------------------------------------>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+     <a class="navbar-brand home-link">Home Page</a>
+</nav>
+
+<!---------------------------------------------------------------- Cards ------------------------------------------------------------------>
+
+  <div class="container">
+    {{range .}}
+    <div class="card">
+      <img src="{{.Image}}" class="card-img-top" alt="{{.Name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{.Name}}</h5>
+        <p class="card-text">{{.Year}}</p>
+        <a href="/details?name={{.Name}}" class="btn btn-secondary">Details</a>
+      </div>
+    </div>
+    {{end}}
+  </div>
+
+</body>
+<!---------------------------------------------------------------- footer ------------------------------------------------------------------>
+
+<footer>
+  <div class="text-center p-3">
+     2024 Copyright:
+    <a class="text-reset fw-normal" href="https://reboot01.com/" style="color: white">© Reboot01 Students</a>
+  </div>
+</footer>
+
+</html>

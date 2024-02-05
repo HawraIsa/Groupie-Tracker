@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <style>
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  background: linear-gradient(to bottom, #3C1642, #1B063A);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  color: #F5E663;
+  font-size: 36px;
+  font-family: Arial, sans-serif;
+  margin: 30px 0;
+}
+
+h3 {
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+}
+
+.back-button,
+.home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  border-radius: 30px;
+  background-color: #F5E663;
+  color: #3C1642;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.back-button:hover,
+.home-button:hover {
+  background-color: #FF7F50;
+  color: #FFF;
+}
+    </style>
+</head>
+<body>
+    <h1>Error {{.StatusCode}}</h1>
+    <h3>{{.Message}}</h3>
+    <button class="back-button" onclick="goBack()">Go Back</button>
+    <button class="home-button" onclick="goHome()">Home</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function goHome() {
+            window.location.href = "/";
+        }
+    </script>
+</body>
+</html>

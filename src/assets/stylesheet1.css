@@ -1,0 +1,36 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: arial;
+    transition: 0.5s;
+}
+body
+{
+    width: 100vw;
+    height:100vh;
+    background: #c8e8e0;
+    padding: 50px;
+}
+h1{
+    color: #2e937a;
+    font-size: 45px;
+    margin-top: 10px;
+}
+.row
+{
+    padding-top: 50px;
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box
+{
+    width: 320px;
+    height:500px;
+    background: #fff;
+    border-radius: 20px;
+}
